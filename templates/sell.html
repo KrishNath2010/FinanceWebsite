@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <label for="membership">Choose a symbol:</label>
+        <select name="symbol" placeholder="symbol">
+          {%for i in trav%}
+                      <option value= {{i["symbol"]}} >{{i["symbol"]}}</option>
+          {%endfor%}  
+        <div class="form-group">
+            <input class="form-control" name="shares" placeholder="shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

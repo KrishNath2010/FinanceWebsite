@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table>
+      <tr>
+        <th>Symbol </th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+      </tr>
+      <tr>
+        {%for i in tabel%}
+            <td>{{i["symbol"]}}</td>
+        {%endfor%}  
+        {%for i in tabel%}
+            <td>{{i["shares"]}}</td>
+        {%endfor%}  
+        {%for i in tabel%}
+            <td>{{i["value"]}}</td>
+        {%endfor%}  
+        {%for i in tabel%}
+            <td>{{i["totalvalue"]}}</td>
+        {%endfor%} 
+      </tr>
+      <tr>
+        <td>cash</td>  
+        <td>{{(tabel[-1])["cash"]}}</td>
+      </tr>
+      <tr>
+        <td>Total</td> 
+        <td>{{(tabel[-1])["total account value"]}}</td>
+      </tr>
+    </table>
+{% endblock %}
